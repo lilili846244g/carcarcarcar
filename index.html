@@ -27,17 +27,25 @@
         }
         
         .skyline-2 {
-            animation: svgMove 4999ms linear infinite;
+            animation: svgMove-1 4999ms linear infinite;
             animation-delay: 3s;
-            z-index: 100;
         }
         
         @keyframes svgMove {
             0% {
-                transform: translateX(4vw);
+                transform: translateX(0vw);
             }
             100% {
-                transform: translateX(-4vw);
+                transform: translateX(-10vw);
+            }
+        }
+        
+        @keyframes svgMove-1 {
+            0% {
+                transform: translateX(0vw);
+            }
+            100% {
+                transform: translateX(-8vw);
             }
         }
     </style>
