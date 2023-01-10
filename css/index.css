@@ -327,18 +327,16 @@ body {
 .ts-car__img {
   position: relative;
   height: 400px;
-}
-.ts-car__img img {
-  width: 600px;
+  width: 700px;
 }
 .ts-car__wheel {
   position: absolute;
-  bottom: 10px;
+  bottom: 70px;
   left: 0vw;
 }
 .ts-car__wheel-2 {
   position: absolute;
-  bottom: 10px;
+  bottom: 70px;
   right: 0;
 }
 

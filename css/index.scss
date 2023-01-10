@@ -338,18 +338,16 @@ body {
     &__img {
         position: relative;
         height: 400px;
-        img {
-            width: 600px;
-        }
+        width: 700px;
     }
     &__wheel {
         position: absolute;
-        bottom: 10px;
+        bottom: 70px;
         left: 0vw;
     }
     &__wheel-2 {
         position: absolute;
-        bottom: 10px;
+        bottom: 70px;
         right: 0;
     }
 }
