@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car | Test</title>
+
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/svg.css" />
+    <style>
+        .wheel {
+            animation: rotating 1s linear infinite;
+        }
+        /* @keyframes rotating {
+            to {
+                transform: rotate(360deg);
+            }
+            from {
+                transform: rotate(-360deg);
+            }
+        }*/
+        
+        .skyline-1 {
+            animation: svgMove 4999ms linear infinite;
+        }
+        
+        .skyline-2 {
+            animation: svgMove 4999ms linear infinite;
+            animation-delay: 3s;
+            z-index: 100;
+        }
+        
+        @keyframes svgMove {
+            0% {
+                transform: translateX(4vw);
+            }
+            100% {
+                transform: translateX(-4vw);
+            }
+        }
+    </style>
+</head>
+
+<body class="ts-body">
+    <section class="ts-hero">
+        <!--
+ <nav class="ts-nav ">
+            <div class="ts-logo">logo</div>
+            <ul class="ts-menu">
+                <li><a href="#"> 1 </a></li>
+                <li><a href="#"> 2 </a></li>
+                <li><a href="#"> 3 </a></li>
+                <li><a href="#"> 4</a></li>
+                <li><a href="#"> 5 </a></li>
+                <li><a href="#"> 6 </a></li>
+            </ul>
+        </nav>
+     -->
+        <div class="cittyskylines">
+            <img src="./images/cityskyline-1.svg" alt="" class="skyline-1" />
+
+            <img src="./images/cityskyline-2.svg" alt="" class="skyline-2" />
+        </div>
+        <div class="ts-car">
+            <img src="./images/car_fin-body.svg" alt="" class="ts-car__img" />
+            <img src="./images/car_fin-wheel.svg" alt="" class="ts-car__wheel wheel" />
+            <img src="./images/car_fin-wheel-2.svg" alt="" class="ts-car__wheel-2 wheel" />
+        </div>
+
+        <!--================== section-1 ===================-->
+        <div class="ts-hero__sections ts-hero__section-1" id="HELLO">
+            <nav class="ts-nav">
+                <ul class="ts-menu">
+                    <li>
+                        <a href="#HELLO"> <img src="./images/car.png" alt="" /> </a>
+                    </li>
+                    <li>
+                        <a href="#全智能租車服務"><img src="./images/car.png" alt="" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#WASP-HYBRID"><img src="./images/car.png" alt="" /> </a>
+                    </li>
+                    <li>
+                        <a href="#AI-Parking-Bees">
+                            <img src="./images/car.png" alt="" /></a>
+                    </li>
+                    <li>
+                        <a href="#MR-WRAPPER"> <img src="./images/car.png" alt="" /> </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="ts-text-con">
+                <h1>黃蜂租車</h1>
+                <h2>全智能租車服務</h2>
+            </div>
+        </div>
+        <!--================== section-2 ===================-->
+        <div class="ts-hero__sections ts-hero__section-2" id="全智能租車服務">
+            <nav class="ts-nav">
+                <ul class="ts-menu">
+                    <li>
+                        <a href="#"> <img src="./images/car.png" alt="" /> </a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./images/car.png" alt="" /> </a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./images/car.png" alt="" /> </a>
+                    </li>
+                    <li>
+                        <a href="#"> <img src="./images/car.png" alt="" /></a>
+                    </li>
+                    <li>
+                        <a href="#"> <img src="./images/car.png" alt="" /> </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="ts-hero__section-2-text">
+                <div class="title">
+                    <h1>黃蜂租車</h1>
+                    <h2>全智能租車服務</h2>
+                </div>
+                <div class="btn-black">
+                    <a href="#">前往網站</a>
+                </div>
+
+                <div class="context">
+                    <p>
+                        黃蜂租車不單提供租賃汽車服務，透過貼心的應用程式，客戶能夠解決一切租車的煩惱。
+                    </p>
+                    <p>
+                        黃蜂租車手機應用程式令整個租車流程變得更簡易，只需簡單幾個步驟就能租用市場上最慳油的混能私家車款 — 租車？唔需要理油！
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--================== section-3 ===================-->
+        <div class="ts-hero__sections ts-hero__section-3" id="WASP-HYBRID">
+            <nav class="ts-nav">
+                <ul class="ts-menu">
+                    <li>
+                        <a href="#"> <img src="./images/car.png" alt="" /> </a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./images/car.png" alt="" /> </a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./images/car.png" alt="" /> </a>
+                    </li>
+                    <li>
+                        <a href="#"> <img src="./images/car.png" alt="" /></a>
+                    </li>
+                    <li>
+                        <a href="#"> <img src="./images/car.png" alt="" /> </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="ts-hero__section-3-text">
+                <div class="title">
+                    <h1>WASP HYBRID</h1>
+                    <h2>全港 no.1混能車電池品牌</h2>
+                </div>
+                <div class="btn-yellow">
+                    <a href="#">前往網站</a>
+                </div>
+
+                <div class="context">
+                    <p>
+                        WASP HYBRID是香港首個專利 OBM 混能車電池品牌；產品於2021年成功通過為期三年的實車測試，榮獲多項國際設計專利及安全認證；為本港混能車市場注入高質素、可取、及更經濟選擇。更換混能車的電池從此不再被迫選用昂貴的選擇，還有性價比極高的 WASP HYBRID！
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--================== section-4 ===================-->
+        <div class="ts-hero__sections ts-hero__section-4" id="AI-Parking-Bees">
+            <nav class="ts-nav">
+                <ul class="ts-menu">
+                    <li>
+                        <a href="#"> <img src="./images/car.png" alt="" /> </a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./images/car.png" alt="" /> </a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./images/car.png" alt="" /> </a>
+                    </li>
+                    <li>
+                        <a href="#"> <img src="./images/car.png" alt="" /></a>
+                    </li>
+                    <li>
+                        <a href="#"> <img src="./images/car.png" alt="" /> </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="ts-hero__section-4-text">
+                <div class="title">
+                    <h1>黃蜂租車</h1>
+                    <h2>全智能租車服務</h2>
+                </div>
+                <div class="btn-black">
+                    <a href="#">前往網站</a>
+                </div>
+
+                <div class="context">
+                    <p>
+                        黃蜂租車不單提供租賃汽車服務，透過貼心的應用程式，客戶能夠解決一切租車的煩惱。
+                    </p>
+                    <p>
+                        黃蜂租車手機應用程式令整個租車流程變得更簡易，只需簡單幾個步驟就能租用市場上最慳油的混能私家車款 — 租車？唔需要理油！
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--================== section-5 ===================-->
+        <div class="ts-hero__sections ts-hero__section-5" id="MR-WRAPPER">
+            <nav class="ts-nav">
+                <ul class="ts-menu">
+                    <li>
+                        <a href="#"> <img src="./images/car.png" alt="" /> </a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./images/car.png" alt="" /> </a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./images/car.png" alt="" /> </a>
+                    </li>
+                    <li>
+                        <a href="#"> <img src="./images/car.png" alt="" /></a>
+                    </li>
+                    <li>
+                        <a href="#"> <img src="./images/car.png" alt="" /> </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="ts-hero__section-5-text">
+                <div class="title">
+                    <h1>MR.ＷRAPPER</h1>
+                    <h2>NGO社會服務計劃</h2>
+                </div>
+                <div class="btn-yellow">
+                    <a href="#">前往網站</a>
+                </div>
+
+                <div class="context">
+                    <p>
+                        由黃蜂香港及劉卓然慈善基金攜手合作的汽車護理中心 Mr. Wrapper 貼膜份子是一間為殘疾人士提供汽車護理、鍍膜及貼膜專業培訓的社會企業。Mr. Wrapper期望讓大眾了解到殘疾人士跟我們一樣能在社會中充當重要的角色——我們專注創造出更多的培訓和就業機會，讓更多使用服務的顧客能認識到殘疾人士在汽車美容的專業技術， 為社會服務上帶來一份影響力 。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--================== section-6 disyplay none  ===================-->
+        <div class="ts-hero__sections ts-hero__section-6">
+            <div class="d-flex justify-content-between">
+                <div class="ts-hero__section-6-text ts-bg-red">
+                    <h1>ha ha ha ha.... i am section @ 6</h1>
+                    <h2>with native technologies like CSS scroll snappin</h2>
+                </div>
+                <div class="ts-hero__section-6-block ts-bg-red">6-2</div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/gsap.min.js"></script>
+    <script src="./js/ScrollTrigger.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
