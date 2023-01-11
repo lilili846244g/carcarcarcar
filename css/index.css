@@ -23,11 +23,27 @@ body {
   transition: all 500ms ease-in-out;
 }
 
+.ts-active {
+  position: relative;
+}
+.ts-active::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  -webkit-clip-path: polygon(100% 51%, 0 0, 0 100%);
+          clip-path: polygon(100% 51%, 0 0, 0 100%);
+}
+
 .ts-nav {
   width: 10%;
   position: fixed;
   top: 0;
-  left: 26px;
+  left: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,9 +70,9 @@ body {
   width: 80px;
   height: 40px;
   transition: 0.3s ease;
-}
-.ts-menu img:hover {
-  transform: scale(1.5);
+  /*    &:hover {
+      transform: scale(1.5);
+  }*/
 }
 .ts-menu a {
   text-decoration: none;
@@ -416,18 +432,6 @@ body {
   display: none;
 }
 
-.ts-active {
-  position: relative;
-}
-.ts-active::before {
-  content: "";
-  position: absolute;
-  left: -24px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
-  -webkit-clip-path: polygon(100% 51%, 0 0, 0 100%);
-          clip-path: polygon(100% 51%, 0 0, 0 100%);
+.img-scale {
+  transform: scale(1.5);
 }/*# sourceMappingURL=index.css.map */

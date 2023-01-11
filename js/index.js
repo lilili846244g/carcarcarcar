@@ -41,21 +41,28 @@ tsAnimation.add(function () {
   // remove class
   let link2 = document.getElementById("ts-section-2");
   link2.classList.remove("ts-active");
+
+  /* img-scale*/
+  let scale1 = document.getElementById("ts-section-img-1");
+  scale1.classList.add("img-scale");
+
+  let scale2 = document.getElementById("ts-section-img-2");
+  scale2.classList.remove("img-scale");
 });
 tsAnimation.from(".ts-text-con h1", {
   y: -100,
   opacity: 0,
-  duration: 1,
+  duration: 0.3,
 });
 tsAnimation.from(".ts-text-con h2", {
   y: -100,
   opacity: 0,
-  delay: 0.5,
-  duration: 1,
+  delay: 0.2,
+  duration: 0.3,
 });
 tsAnimation.fromTo(
   ".ts-car",
-  2,
+  0.5,
   {
     x: 230,
     scale: 1.2,
@@ -68,7 +75,7 @@ tsAnimation.fromTo(
 tsAnimation.to(
   ".ts-body",
   {
-    duration: 1,
+    duration: 2,
     backgroundColor: "rgb(255, 215, 46)",
   },
   "-=1"
@@ -89,6 +96,13 @@ tsAnimation.add(function () {
   link1.classList.remove("ts-active");
   let link3 = document.getElementById("ts-section-3");
   link3.classList.remove("ts-active");
+  /* img-scale*/
+  let scale2 = document.getElementById("ts-section-img-2");
+  scale2.classList.add("img-scale");
+  let scale1 = document.getElementById("ts-section-img-1");
+  scale1.classList.remove("img-scale");
+  let scale3 = document.getElementById("ts-section-img-3");
+  scale3.classList.remove("img-scale");
 
   document.getElementById("ts-section-img-1").src = "./images/car.png";
   document.getElementById("ts-section-img-2").src = "./images/car.png";
@@ -96,22 +110,22 @@ tsAnimation.add(function () {
   document.getElementById("ts-section-img-4").src = "./images/car.png";
   document.getElementById("ts-section-img-5").src = "./images/car.png";
 });
+tsAnimation.from(".ts-hero__section-2-text", {
+  y: -100,
+
+  opacity: 0,
+  duration: 2,
+});
 
 tsAnimation.from(".ts-car", {
   x: 100,
-  duration: 1,
-});
-
-tsAnimation.from(".ts-hero__section-2-text", {
-  y: -100,
-  duration: 1,
-  opacity: 0,
+  duration: 0.5,
 });
 
 tsAnimation.to(
   ".ts-body",
   {
-    duration: 2,
+    duration: 1.5,
     backgroundColor: "rgb(57,59,63)",
   },
   "-=1"
@@ -131,11 +145,25 @@ tsAnimation.add(function () {
   let link4 = document.getElementById("ts-section-4");
   link4.classList.remove("ts-active");
 
+  /* img-scale*/
+  let scale3 = document.getElementById("ts-section-img-3");
+  scale3.classList.add("img-scale");
+  let scale2 = document.getElementById("ts-section-img-2");
+  scale2.classList.remove("img-scale");
+  let scale4 = document.getElementById("ts-section-img-4");
+  scale4.classList.remove("img-scale");
+
   document.getElementById("ts-section-img-1").src = "./images/logo-1.png";
   document.getElementById("ts-section-img-2").src = "./images/logo-1.png";
   document.getElementById("ts-section-img-3").src = "./images/logo-1.png";
   document.getElementById("ts-section-img-4").src = "./images/logo-1.png";
   document.getElementById("ts-section-img-5").src = "./images/logo-1.png";
+});
+
+tsAnimation.from(".ts-hero__section-3-text", {
+  y: -100,
+  opacity: 0,
+  duration: 1.5,
 });
 tsAnimation.fromTo(
   ".ts-car",
@@ -149,17 +177,6 @@ tsAnimation.fromTo(
   }
 );
 
-tsAnimation.from(".ts-hero__section-3-block", {
-  y: -100,
-  duration: 1,
-  opacity: 0,
-});
-
-tsAnimation.from(".ts-hero__section-3-text", {
-  y: -100,
-  duration: 1,
-  opacity: 0,
-});
 tsAnimation.to(
   ".ts-body",
   {
@@ -183,8 +200,20 @@ tsAnimation.add(function () {
   link3.classList.remove("ts-active");
   let link5 = document.getElementById("ts-section-5");
   link5.classList.remove("ts-active");
-});
 
+  /* img-scale*/
+  let scale4 = document.getElementById("ts-section-img-4");
+  scale4.classList.add("img-scale");
+  let scale3 = document.getElementById("ts-section-img-3");
+  scale3.classList.remove("img-scale");
+  let scale5 = document.getElementById("ts-section-img-5");
+  scale5.classList.remove("img-scale");
+});
+tsAnimation.from(".ts-hero__section-4-text", {
+  y: -100,
+  opacity: 0,
+  duration: 1.5,
+});
 tsAnimation.fromTo(
   ".ts-car",
   {
@@ -197,16 +226,6 @@ tsAnimation.fromTo(
   }
 );
 
-tsAnimation.from(".ts-hero__section-4-block", {
-  y: -100,
-  duration: 1,
-  opacity: 0,
-});
-tsAnimation.from(".ts-hero__section-4-text", {
-  y: -100,
-  duration: 1,
-  opacity: 0,
-});
 tsAnimation.to(
   ".ts-body",
   {
@@ -228,22 +247,22 @@ tsAnimation.add(function () {
   // remove class
   let link4 = document.getElementById("ts-section-4");
   link4.classList.remove("ts-active");
-});
 
-tsAnimation.from(".ts-car", {
-  x: 300,
-  duration: 1,
-});
-
-tsAnimation.from(".ts-hero__section-5-block", {
-  y: -100,
-  duration: 1,
-  opacity: 0,
+  /* img-scale*/
+  let scale5 = document.getElementById("ts-section-img-5");
+  scale5.classList.add("img-scale");
+  let scale4 = document.getElementById("ts-section-img-4");
+  scale4.classList.remove("img-scale");
 });
 tsAnimation.from(".ts-hero__section-5-text", {
   y: -100,
-  duration: 1,
+
   opacity: 0,
+  duration: 1.5,
+});
+tsAnimation.from(".ts-car", {
+  x: 300,
+  duration: 1,
 });
 tsAnimation.to(
   ".ts-body",
