@@ -1,18 +1,46 @@
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-let sections = document.querySelectorAll(".ts-hero__sections");
+const sections = gsap.utils.toArray(".ts-hero__sections");
 
-let totalContainer = sections.length;
-
-var tsAnimation = gsap.timeline({
+let tsAnimation = gsap.timeline({
   scrollTrigger: {
     trigger: ".ts-hero",
     pin: true,
     start: "top top",
-    end: window.innerHeight * totalContainer,
+    end: () => "+=" + innerHeight * sections.length,
     scrub: true,
     markers: true,
   },
+});
+sections.forEach(function (e, i) {
+  tsAnimation.fromTo(
+    e,
+    {
+      yPercent: 100,
+    },
+    {
+      yPercent: 0,
+    },
+    i
+  );
+});
+
+gsap.utils.toArray("li a").forEach((a, i) => {
+  a.addEventListener("click", (e) => {
+    e.preventDefault();
+    gsap.to(window, { scrollTo: i * innerHeight });
+  });
+});
+
+// =================== section 1 ==========================
+
+tsAnimation.add(function () {
+  // add class
+  let link1 = document.getElementById("ts-section-1");
+  link1.classList.add("ts-active");
+  // remove class
+  let link2 = document.getElementById("ts-section-2");
+  link2.classList.remove("ts-active");
 });
 tsAnimation.from(".ts-text-con h1", {
   y: -100,
@@ -52,6 +80,23 @@ tsAnimation.to(".ts-hero__section-1", { display: "none", duration: 0 });
 
 // =================== section 2 ==========================
 
+tsAnimation.add(function () {
+  // add class
+  let link2 = document.getElementById("ts-section-2");
+  link2.classList.add("ts-active");
+  // remove class
+  let link1 = document.getElementById("ts-section-1");
+  link1.classList.remove("ts-active");
+  let link3 = document.getElementById("ts-section-3");
+  link3.classList.remove("ts-active");
+
+  document.getElementById("ts-section-img-1").src = "./images/car.png";
+  document.getElementById("ts-section-img-2").src = "./images/car.png";
+  document.getElementById("ts-section-img-3").src = "./images/car.png";
+  document.getElementById("ts-section-img-4").src = "./images/car.png";
+  document.getElementById("ts-section-img-5").src = "./images/car.png";
+});
+
 tsAnimation.from(".ts-car", {
   x: 100,
   duration: 1,
@@ -62,11 +107,7 @@ tsAnimation.from(".ts-hero__section-2-text", {
   duration: 1,
   opacity: 0,
 });
-tsAnimation.from(".ts-hero__section-2-block", {
-  y: -100,
-  duration: 1,
-  opacity: 0,
-});
+
 tsAnimation.to(
   ".ts-body",
   {
@@ -80,7 +121,22 @@ tsAnimation.to(".ts-hero__section-2", { opacity: 0 });
 tsAnimation.to(".ts-hero__section-2", { display: "none", duration: 0 });
 
 // =================== section 3 ==========================
+tsAnimation.add(function () {
+  // add class
+  let link3 = document.getElementById("ts-section-3");
+  link3.classList.add("ts-active");
+  // remove class
+  let link2 = document.getElementById("ts-section-2");
+  link2.classList.remove("ts-active");
+  let link4 = document.getElementById("ts-section-4");
+  link4.classList.remove("ts-active");
 
+  document.getElementById("ts-section-img-1").src = "./images/logo-1.png";
+  document.getElementById("ts-section-img-2").src = "./images/logo-1.png";
+  document.getElementById("ts-section-img-3").src = "./images/logo-1.png";
+  document.getElementById("ts-section-img-4").src = "./images/logo-1.png";
+  document.getElementById("ts-section-img-5").src = "./images/logo-1.png";
+});
 tsAnimation.fromTo(
   ".ts-car",
   {
@@ -118,6 +174,17 @@ tsAnimation.to(".ts-hero__section-3", { display: "none", duration: 0 });
 
 // =================== section 4 ==========================
 
+tsAnimation.add(function () {
+  // add class
+  let link4 = document.getElementById("ts-section-4");
+  link4.classList.add("ts-active");
+  // remove class
+  let link3 = document.getElementById("ts-section-3");
+  link3.classList.remove("ts-active");
+  let link5 = document.getElementById("ts-section-5");
+  link5.classList.remove("ts-active");
+});
+
 tsAnimation.fromTo(
   ".ts-car",
   {
@@ -153,6 +220,15 @@ tsAnimation.to(".ts-hero__section-4", { opacity: 0 });
 tsAnimation.to(".ts-hero__section-4", { display: "none", duration: 0 });
 
 // =================== section 5 ==========================
+
+tsAnimation.add(function () {
+  // add class
+  let link5 = document.getElementById("ts-section-5");
+  link5.classList.add("ts-active");
+  // remove class
+  let link4 = document.getElementById("ts-section-4");
+  link4.classList.remove("ts-active");
+});
 
 tsAnimation.from(".ts-car", {
   x: 300,

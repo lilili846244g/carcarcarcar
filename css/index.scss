@@ -28,7 +28,7 @@ body {
         width: 10%;
         position: fixed;
         top: 0;
-        left: 10px;
+        left: 26px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -309,11 +309,32 @@ body {
     position: relative;
     z-index: -1;
     overflow: hidden;
+    opacity: 0.5;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-28%);
+        width: 100%;
+        height: 30vh;
+        background: rgb(236, 238, 232);
+        background: linear-gradient( 247deg, rgba(236, 238, 232, 0) 86%, rgba(206, 214, 214, 0.5788690476190477) 94%);
+    }
     .skyline-1 {
         width: 120%;
         position: absolute;
         top: 30%;
         left: 0%;
+        animation: svgMove 4999ms linear infinite;
+        @keyframes svgMove {
+            0% {
+                transform: translateX(0vw);
+            }
+            100% {
+                transform: translateX(-10vw);
+            }
+        }
         img {
             width: 100%;
         }
@@ -323,6 +344,16 @@ body {
         position: absolute;
         top: 30%;
         left: 0%;
+        animation: svgMove-1 4999ms linear infinite;
+        animation-delay: 3s;
+        @keyframes svgMove-1 {
+            0% {
+                transform: translateX(0vw);
+            }
+            100% {
+                transform: translateX(-8vw);
+            }
+        }
         img {
             width: 150%;
         }
@@ -342,16 +373,44 @@ body {
     }
     &__wheel {
         position: absolute;
-        bottom: 70px;
-        left: 0vw;
+        width: 87px;
+        bottom: 117px;
+        left: 137px;
     }
     &__wheel-2 {
         position: absolute;
-        bottom: 70px;
-        right: 0;
+        bottom: 119px;
+        right: 147px;
+        width: 87px;
+    }
+    .wheel {
+        animation: rotating 1s linear infinite;
+        @keyframes rotating {
+            to {
+                transform: rotate(0deg);
+            }
+            from {
+                transform: rotate(360deg);
+            }
+        }
     }
 }
 
 .none {
     display: none;
+}
+
+.ts-active {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        left: -24px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        clip-path: polygon(100% 51%, 0 0, 0 100%);
+    }
 }
