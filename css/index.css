@@ -17,9 +17,9 @@ body {
 }
 
 .ts-body {
-  background-color: var(--background-color-1);
   overflow-x: hidden !important;
   overflow-y: scroll;
+  background-color: var(--background-color-1);
   transition: all 500ms ease-in-out;
 }
 
@@ -37,6 +37,134 @@ body {
   background-color: #fff;
   -webkit-clip-path: polygon(100% 51%, 0 0, 0 100%);
           clip-path: polygon(100% 51%, 0 0, 0 100%);
+  transition: 0.3s ease;
+}
+
+.img-box {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.img-box .cittyskylines {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 0.5;
+}
+.img-box .cittyskylines::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-28%);
+  width: 100%;
+  height: 30vh;
+  background: rgb(236, 238, 232);
+  background: linear-gradient(247deg, rgba(236, 238, 232, 0) 86%, rgba(206, 214, 214, 0.5788690476) 94%);
+}
+.img-box .cittyskylines .skyline-1 {
+  width: 120%;
+  position: fixed;
+  top: 30%;
+  left: 0%;
+  -webkit-animation: svgMove 4999ms linear infinite;
+          animation: svgMove 4999ms linear infinite;
+}
+@-webkit-keyframes svgMove {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(-10vw);
+  }
+}
+@keyframes svgMove {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(-10vw);
+  }
+}
+.img-box .cittyskylines .skyline-1 img {
+  width: 100%;
+}
+.img-box .cittyskylines .skyline-2 {
+  width: 120%;
+  position: fixed;
+  top: 30%;
+  left: 0%;
+  -webkit-animation: svgMove-1 4999ms linear infinite;
+          animation: svgMove-1 4999ms linear infinite;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+@-webkit-keyframes svgMove-1 {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(-8vw);
+  }
+}
+@keyframes svgMove-1 {
+  0% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(-8vw);
+  }
+}
+.img-box .cittyskylines .skyline-2 img {
+  width: 150%;
+}
+.img-box .ts-car {
+  position: fixed;
+  top: 50vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+.img-box .ts-car__img {
+  position: relative;
+  height: 400px;
+  width: 700px;
+}
+.img-box .ts-car__wheel {
+  position: absolute;
+  width: 87px;
+  bottom: 117px;
+  left: 137px;
+}
+.img-box .ts-car__wheel-2 {
+  position: absolute;
+  bottom: 119px;
+  right: 147px;
+  width: 87px;
+}
+.img-box .ts-car .wheel {
+  -webkit-animation: rotating 1s linear infinite;
+          animation: rotating 1s linear infinite;
+}
+@-webkit-keyframes rotating {
+  to {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  to {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
 }
 
 .ts-nav {
@@ -48,7 +176,7 @@ body {
   align-items: center;
   justify-content: space-between;
   margin: 14px 20px;
-  z-index: 100;
+  z-index: 10000;
 }
 .ts-logo {
   font-weight: bold;
@@ -82,7 +210,10 @@ body {
 }
 .ts-hero {
   position: relative;
-  z-index: 1;
+  z-index: 1000;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
 }
 .ts-hero-title-1 {
   font-weight: bold;
@@ -305,127 +436,6 @@ body {
 .ts-hero__section-5-text .context p {
   color: aliceblue;
   text-align: left;
-}
-
-.cittyskylines {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  z-index: -1;
-  overflow: hidden;
-  opacity: 0.5;
-}
-.cittyskylines::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-28%);
-  width: 100%;
-  height: 30vh;
-  background: rgb(236, 238, 232);
-  background: linear-gradient(247deg, rgba(236, 238, 232, 0) 86%, rgba(206, 214, 214, 0.5788690476) 94%);
-}
-.cittyskylines .skyline-1 {
-  width: 120%;
-  position: absolute;
-  top: 30%;
-  left: 0%;
-  -webkit-animation: svgMove 4999ms linear infinite;
-          animation: svgMove 4999ms linear infinite;
-}
-@-webkit-keyframes svgMove {
-  0% {
-    transform: translateX(0vw);
-  }
-  100% {
-    transform: translateX(-10vw);
-  }
-}
-@keyframes svgMove {
-  0% {
-    transform: translateX(0vw);
-  }
-  100% {
-    transform: translateX(-10vw);
-  }
-}
-.cittyskylines .skyline-1 img {
-  width: 100%;
-}
-.cittyskylines .skyline-2 {
-  width: 120%;
-  position: absolute;
-  top: 30%;
-  left: 0%;
-  -webkit-animation: svgMove-1 4999ms linear infinite;
-          animation: svgMove-1 4999ms linear infinite;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
-}
-@-webkit-keyframes svgMove-1 {
-  0% {
-    transform: translateX(0vw);
-  }
-  100% {
-    transform: translateX(-8vw);
-  }
-}
-@keyframes svgMove-1 {
-  0% {
-    transform: translateX(0vw);
-  }
-  100% {
-    transform: translateX(-8vw);
-  }
-}
-.cittyskylines .skyline-2 img {
-  width: 150%;
-}
-
-.ts-car {
-  position: absolute;
-  top: 50vh;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-}
-.ts-car__img {
-  position: relative;
-  height: 400px;
-  width: 700px;
-}
-.ts-car__wheel {
-  position: absolute;
-  width: 87px;
-  bottom: 117px;
-  left: 137px;
-}
-.ts-car__wheel-2 {
-  position: absolute;
-  bottom: 119px;
-  right: 147px;
-  width: 87px;
-}
-.ts-car .wheel {
-  -webkit-animation: rotating 1s linear infinite;
-          animation: rotating 1s linear infinite;
-}
-@-webkit-keyframes rotating {
-  to {
-    transform: rotate(0deg);
-  }
-  from {
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotating {
-  to {
-    transform: rotate(0deg);
-  }
-  from {
-    transform: rotate(360deg);
-  }
 }
 
 .none {

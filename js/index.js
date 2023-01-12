@@ -12,6 +12,18 @@ let tsAnimation = gsap.timeline({
     markers: true,
   },
 });
+
+/*
+const allItem = document.querySelectorAll("nav ul li a");
+allItem.forEach((item) => {
+  item.addEventListener("click", function (e) {
+    for (var i = 0; i < allItem.length; i++) {
+      allItem[i].classList.remove("ts-active");
+    }
+    this.classList.add("ts-active");
+  });
+});
+*/
 sections.forEach(function (e, i) {
   tsAnimation.fromTo(
     e,
@@ -25,7 +37,7 @@ sections.forEach(function (e, i) {
   );
 });
 
-gsap.utils.toArray("li a").forEach((a, i) => {
+gsap.utils.toArray("nav ul li a").forEach((a, i) => {
   a.addEventListener("click", (e) => {
     e.preventDefault();
     gsap.to(window, { scrollTo: i * innerHeight });
@@ -33,7 +45,6 @@ gsap.utils.toArray("li a").forEach((a, i) => {
 });
 
 // =================== section 1 ==========================
-
 tsAnimation.add(function () {
   // add class
   let link1 = document.getElementById("ts-section-1");
@@ -42,13 +53,14 @@ tsAnimation.add(function () {
   let link2 = document.getElementById("ts-section-2");
   link2.classList.remove("ts-active");
 
-  /* img-scale*/
+  /* img-scale */
   let scale1 = document.getElementById("ts-section-img-1");
   scale1.classList.add("img-scale");
 
   let scale2 = document.getElementById("ts-section-img-2");
   scale2.classList.remove("img-scale");
 });
+
 tsAnimation.from(".ts-text-con h1", {
   y: -100,
   opacity: 0,
@@ -96,7 +108,7 @@ tsAnimation.add(function () {
   link1.classList.remove("ts-active");
   let link3 = document.getElementById("ts-section-3");
   link3.classList.remove("ts-active");
-  /* img-scale*/
+  /* img-scale */
   let scale2 = document.getElementById("ts-section-img-2");
   scale2.classList.add("img-scale");
   let scale1 = document.getElementById("ts-section-img-1");
@@ -112,9 +124,8 @@ tsAnimation.add(function () {
 });
 tsAnimation.from(".ts-hero__section-2-text", {
   y: -100,
-
   opacity: 0,
-  duration: 2,
+  duration: 1.5,
 });
 
 tsAnimation.from(".ts-car", {
@@ -145,7 +156,7 @@ tsAnimation.add(function () {
   let link4 = document.getElementById("ts-section-4");
   link4.classList.remove("ts-active");
 
-  /* img-scale*/
+  /* img-scale */
   let scale3 = document.getElementById("ts-section-img-3");
   scale3.classList.add("img-scale");
   let scale2 = document.getElementById("ts-section-img-2");
@@ -201,7 +212,7 @@ tsAnimation.add(function () {
   let link5 = document.getElementById("ts-section-5");
   link5.classList.remove("ts-active");
 
-  /* img-scale*/
+  /* img-scale */
   let scale4 = document.getElementById("ts-section-img-4");
   scale4.classList.add("img-scale");
   let scale3 = document.getElementById("ts-section-img-3");
@@ -248,7 +259,7 @@ tsAnimation.add(function () {
   let link4 = document.getElementById("ts-section-4");
   link4.classList.remove("ts-active");
 
-  /* img-scale*/
+  /* img-scale */
   let scale5 = document.getElementById("ts-section-img-5");
   scale5.classList.add("img-scale");
   let scale4 = document.getElementById("ts-section-img-4");
