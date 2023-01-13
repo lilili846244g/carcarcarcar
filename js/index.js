@@ -1,6 +1,51 @@
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const sections = gsap.utils.toArray(".ts-hero__sections");
+const navLinks = gsap.utils.toArray("nav ul li a ");
+navLinks.forEach((link, i) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    navLinks.forEach((item) => {
+      item.addEventListener("click", function (e) {
+        for (var i = 0; i < navLinks.length; i++) {
+          navLinks[i].classList.remove("ts-active");
+        }
+        this.classList.add("ts-active");
+      });
+    });
+    gsap.to(window, { scrollTo: (i + 1) * innerHeight });
+  });
+});
+
+const boxs = gsap.utils.toArray(".ts-hero__sections");
+
+boxs.forEach((boxs, i) => {
+  ScrollTrigger.create({
+    start: 0,
+    end: (i + 1) * innerHeight - innerHeight / 2,
+    markers: true,
+    onLeave: () => {
+      navLinks.forEach((e) => {
+        e.classList.remove("ts-active");
+      });
+      navLinks[i].classList.add("ts-active");
+      if (navLinks[i + 1]) {
+        gsap.to(navLinks[i + 1], { scale: 1.5 });
+        gsap.to(navLinks[i], { scale: 1 });
+      }
+    },
+    onEnterBack: () => {
+      navLinks.forEach((e) => {
+        e.classList.remove("ts-active");
+      });
+      navLinks[i].classList.add("ts-active");
+      gsap.to(navLinks[i], { scale: 1.5 });
+      if (navLinks[i + 1]) {
+        gsap.to(navLinks[i + 1], { scale: 1 });
+      }
+    },
+  });
+});
 
 let tsAnimation = gsap.timeline({
   scrollTrigger: {
@@ -13,53 +58,7 @@ let tsAnimation = gsap.timeline({
   },
 });
 
-/*
-const allItem = document.querySelectorAll("nav ul li a");
-allItem.forEach((item) => {
-  item.addEventListener("click", function (e) {
-    for (var i = 0; i < allItem.length; i++) {
-      allItem[i].classList.remove("ts-active");
-    }
-    this.classList.add("ts-active");
-  });
-});
-*/
-sections.forEach(function (e, i) {
-  tsAnimation.fromTo(
-    e,
-    {
-      yPercent: 100,
-    },
-    {
-      yPercent: 0,
-    },
-    i
-  );
-});
-
-gsap.utils.toArray("nav ul li a").forEach((a, i) => {
-  a.addEventListener("click", (e) => {
-    e.preventDefault();
-    gsap.to(window, { scrollTo: i * innerHeight });
-  });
-});
-
 // =================== section 1 ==========================
-tsAnimation.add(function () {
-  // add class
-  let link1 = document.getElementById("ts-section-1");
-  link1.classList.add("ts-active");
-  // remove class
-  let link2 = document.getElementById("ts-section-2");
-  link2.classList.remove("ts-active");
-
-  /* img-scale */
-  let scale1 = document.getElementById("ts-section-img-1");
-  scale1.classList.add("img-scale");
-
-  let scale2 = document.getElementById("ts-section-img-2");
-  scale2.classList.remove("img-scale");
-});
 
 tsAnimation.from(".ts-text-con h1", {
   y: -100,
@@ -100,22 +99,6 @@ tsAnimation.to(".ts-hero__section-1", { display: "none", duration: 0 });
 // =================== section 2 ==========================
 
 tsAnimation.add(function () {
-  // add class
-  let link2 = document.getElementById("ts-section-2");
-  link2.classList.add("ts-active");
-  // remove class
-  let link1 = document.getElementById("ts-section-1");
-  link1.classList.remove("ts-active");
-  let link3 = document.getElementById("ts-section-3");
-  link3.classList.remove("ts-active");
-  /* img-scale */
-  let scale2 = document.getElementById("ts-section-img-2");
-  scale2.classList.add("img-scale");
-  let scale1 = document.getElementById("ts-section-img-1");
-  scale1.classList.remove("img-scale");
-  let scale3 = document.getElementById("ts-section-img-3");
-  scale3.classList.remove("img-scale");
-
   document.getElementById("ts-section-img-1").src = "./images/car.png";
   document.getElementById("ts-section-img-2").src = "./images/car.png";
   document.getElementById("ts-section-img-3").src = "./images/car.png";
@@ -147,23 +130,6 @@ tsAnimation.to(".ts-hero__section-2", { display: "none", duration: 0 });
 
 // =================== section 3 ==========================
 tsAnimation.add(function () {
-  // add class
-  let link3 = document.getElementById("ts-section-3");
-  link3.classList.add("ts-active");
-  // remove class
-  let link2 = document.getElementById("ts-section-2");
-  link2.classList.remove("ts-active");
-  let link4 = document.getElementById("ts-section-4");
-  link4.classList.remove("ts-active");
-
-  /* img-scale */
-  let scale3 = document.getElementById("ts-section-img-3");
-  scale3.classList.add("img-scale");
-  let scale2 = document.getElementById("ts-section-img-2");
-  scale2.classList.remove("img-scale");
-  let scale4 = document.getElementById("ts-section-img-4");
-  scale4.classList.remove("img-scale");
-
   document.getElementById("ts-section-img-1").src = "./images/logo-1.png";
   document.getElementById("ts-section-img-2").src = "./images/logo-1.png";
   document.getElementById("ts-section-img-3").src = "./images/logo-1.png";
@@ -202,24 +168,7 @@ tsAnimation.to(".ts-hero__section-3", { display: "none", duration: 0 });
 
 // =================== section 4 ==========================
 
-tsAnimation.add(function () {
-  // add class
-  let link4 = document.getElementById("ts-section-4");
-  link4.classList.add("ts-active");
-  // remove class
-  let link3 = document.getElementById("ts-section-3");
-  link3.classList.remove("ts-active");
-  let link5 = document.getElementById("ts-section-5");
-  link5.classList.remove("ts-active");
-
-  /* img-scale */
-  let scale4 = document.getElementById("ts-section-img-4");
-  scale4.classList.add("img-scale");
-  let scale3 = document.getElementById("ts-section-img-3");
-  scale3.classList.remove("img-scale");
-  let scale5 = document.getElementById("ts-section-img-5");
-  scale5.classList.remove("img-scale");
-});
+tsAnimation.add(function () {});
 tsAnimation.from(".ts-hero__section-4-text", {
   y: -100,
   opacity: 0,
@@ -251,20 +200,7 @@ tsAnimation.to(".ts-hero__section-4", { display: "none", duration: 0 });
 
 // =================== section 5 ==========================
 
-tsAnimation.add(function () {
-  // add class
-  let link5 = document.getElementById("ts-section-5");
-  link5.classList.add("ts-active");
-  // remove class
-  let link4 = document.getElementById("ts-section-4");
-  link4.classList.remove("ts-active");
-
-  /* img-scale */
-  let scale5 = document.getElementById("ts-section-img-5");
-  scale5.classList.add("img-scale");
-  let scale4 = document.getElementById("ts-section-img-4");
-  scale4.classList.remove("img-scale");
-});
+tsAnimation.add(function () {});
 tsAnimation.from(".ts-hero__section-5-text", {
   y: -100,
 
@@ -283,32 +219,3 @@ tsAnimation.to(
   },
   "-=1"
 );
-
-/*tsAnimation.to(".ts-hero__section-5", { opacity: 0 });
-tsAnimation.to(".ts-hero__section-5", { display: "none", duration: 0 });*/
-
-// =================== section 5 ==========================
-
-/*tsAnimation.from(".ts-car", {
-  x: 100,
-  duration: 1,
-});
-
-tsAnimation.from(".ts-hero__section-6-block", {
-  y: -100,
-  duration: 1,
-  opacity: 0,
-});
-tsAnimation.from(".ts-hero__section-6-text", {
-  y: -100,
-  duration: 1,
-  opacity: 0,
-});
-tsAnimation.to(
-  ".ts-body",
-  {
-    duration: 1,
-    backgroundColor: "rgb(200, 200, 200)",
-  },
-  "-=1"
-);*/

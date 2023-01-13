@@ -219,30 +219,6 @@ body {
             margin: 0 auto;
             overflow: hidden;
         }
-        &__section-6 {
-            display: none;
-            &-text {
-                position: absolute;
-                top: 20%;
-                left: 20%;
-                background-color: rgb(216, 11, 172);
-                max-width: 450px;
-                height: 250px;
-                padding: 2em;
-            }
-            &-text h1 {
-                text-transform: uppercase;
-            }
-            &-block {
-                position: absolute;
-                top: 30%;
-                right: 20%;
-                background-color: rgb(22, 132, 216);
-                width: clamp(100px, 18vw, 800px);
-                height: clamp(500px, 60vh, 1000px);
-                z-index: 101;
-            }
-        }
     }
 }
 
