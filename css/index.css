@@ -47,135 +47,76 @@ body {
   top: 0;
   left: 0;
 }
-.img-box .cittyskylines {
-  width: 200%;
-  min-height: 100%;
-  position: relative;
-  z-index: -1;
-  overflow: hidden;
-  opacity: 0.2;
-}
-.img-box .cittyskylines::before {
-  content: "";
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-28%);
-  width: 100%;
-  height: 30vh;
-  background: rgb(236, 238, 232);
-  background: linear-gradient(247deg, rgba(236, 238, 232, 0) 86%, rgba(206, 214, 214, 0.5788690476) 94%);
-}
-.img-box .cittyskylines .skyline-1 {
-  width: 100%;
-  position: fixed;
-  top: 30%;
-  left: 0%;
-  -webkit-animation: svgMove 4999ms linear infinite;
-          animation: svgMove 4999ms linear infinite;
-}
-@-webkit-keyframes svgMove {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-8vw);
-  }
-}
-@keyframes svgMove {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-8vw);
-  }
-}
-.img-box .cittyskylines .skyline-1 img {
-  width: 100%;
-}
-.img-box .cittyskylines .skyline-2 {
-  width: 100%;
-  position: fixed;
-  top: 30%;
-  left: 0%;
-  -webkit-animation: svgMove-1 4999ms linear infinite;
-          animation: svgMove-1 4999ms linear infinite;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
-}
-@-webkit-keyframes svgMove-1 {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-8vw);
-  }
-}
-@keyframes svgMove-1 {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-8vw);
-  }
-}
-.img-box .cittyskylines .skyline-2 img {
+.img-box .cityskylines {
   width: 150%;
+  height: 30vh;
+  min-height: 100%;
+  position: fixed;
+  top: 40vh;
+  left: -500px;
+  opacity: 0.9;
+  background: url("/images/cityskyline-1.svg") repeat-x;
+  background-size: 60%;
 }
-.img-box .ts-car {
+.img-box .cityskylines::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url("/images/cityskyline-2.svg") repeat-x;
+  background-size: 60%;
+}
+
+/* @keyframes scroll-anim {
+    100% {
+        background-position: -100% 0;
+    }
+} */
+.ts-car {
   position: fixed;
   top: 50vh;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
+  /*    .wheel {
+      animation: rotating 1s linear infinite;
+      @keyframes rotating {
+          to {
+              transform: rotate(0deg);
+          }
+          from {
+              transform: rotate(360deg);
+          }
+      }
+  } */
 }
-.img-box .ts-car__img {
+.ts-car__img {
   position: relative;
   height: 400px;
   width: 700px;
 }
-.img-box .ts-car__wheel {
+.ts-car__wheel {
   position: absolute;
   width: 87px;
   bottom: 117px;
   left: 137px;
 }
-.img-box .ts-car__wheel-2 {
+.ts-car__wheel-2 {
   position: absolute;
   bottom: 119px;
   right: 147px;
   width: 87px;
 }
-.img-box .ts-car .wheel {
-  -webkit-animation: rotating 1s linear infinite;
-          animation: rotating 1s linear infinite;
-}
-@-webkit-keyframes rotating {
-  to {
-    transform: rotate(0deg);
-  }
-  from {
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotating {
-  to {
-    transform: rotate(0deg);
-  }
-  from {
-    transform: rotate(360deg);
-  }
-}
 
 .ts-nav {
-  width: 10%;
+  width: 100%;
   position: fixed;
   top: 0;
-  left: 50px;
+  left: 0;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  margin: 14px 20px;
+  margin: 14px 30px;
   z-index: 10000;
 }
 .ts-logo {
@@ -184,15 +125,15 @@ body {
   text-transform: capitalize;
 }
 .ts-menu {
-  width: 10%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 5px;
+  align-items: flex-start;
+  gap: 26px;
   list-style: none;
   font-size: 3.5vw;
-  margin: 10px 0;
+  margin: 50px 0;
 }
 .ts-menu img {
   width: 80px;
@@ -204,6 +145,12 @@ body {
 }
 .ts-menu a {
   text-decoration: none;
+  font-size: 26px;
+  display: inline-block;
+  color: black;
+}
+.ts-menu a:nth-child(1) {
+  display: flex;
 }
 .ts-bg-red {
   background-color: red;

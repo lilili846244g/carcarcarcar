@@ -5,19 +5,21 @@ const navLinks = gsap.utils.toArray("nav ul li a ");
 navLinks.forEach((link, i) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
-    navLinks.forEach((item) => {
+    /*    navLinks.forEach((item) => {
       item.addEventListener("click", function (e) {
         for (var i = 0; i < navLinks.length; i++) {
           navLinks[i].classList.remove("ts-active");
         }
         this.classList.add("ts-active");
       });
-    });
-    gsap.to(window, { scrollTo: (i + 1) * innerHeight });
+    }); */
+
+    gsap.to(window, { scrollTo: i * innerHeight });
+    document.getElementById(`ts-section-${i}`).classList.add("ts-active");
+    gsap.to(`#ts-section-${i + 1}`, { scale: 1.2 });
   });
 });
-
-const boxs = gsap.utils.toArray(".ts-hero__sections");
+/* const boxs = gsap.utils.toArray(".ts-hero__sections");
 
 boxs.forEach((boxs, i) => {
   ScrollTrigger.create({
@@ -45,7 +47,7 @@ boxs.forEach((boxs, i) => {
       }
     },
   });
-});
+}); */
 
 let tsAnimation = gsap.timeline({
   scrollTrigger: {
@@ -53,25 +55,51 @@ let tsAnimation = gsap.timeline({
     pin: true,
     start: "top top",
     end: () => "+=" + innerHeight * sections.length,
-    scrub: true,
+    scrub: 4,
     markers: true,
   },
 });
 
 // =================== section 1 ==========================
-
-tsAnimation.from(".ts-text-con h1", {
-  y: -100,
-  opacity: 0,
-  duration: 0.3,
-});
-tsAnimation.from(".ts-text-con h2", {
-  y: -100,
-  opacity: 0,
-  delay: 0.2,
-  duration: 0.3,
-});
 tsAnimation.fromTo(
+  ".cityskylines",
+  1,
+  {
+    x: 0,
+  },
+  {
+    x: 100,
+  }
+);
+tsAnimation.from(
+  ".wheel",
+  {
+    rotation: "360",
+    duration: 2,
+    ease: "none",
+  },
+  "-1"
+);
+tsAnimation.from(
+  ".ts-text-con h1",
+  {
+    y: -100,
+    opacity: 0,
+    duration: 0.3,
+  },
+  "-1"
+);
+tsAnimation.from(
+  ".ts-text-con h2",
+  {
+    y: -100,
+    opacity: 0,
+    delay: 0.2,
+    duration: 0.3,
+  },
+  "-1"
+);
+/* tsAnimation.fromTo(
   ".ts-car",
   0.5,
   {
@@ -81,7 +109,7 @@ tsAnimation.fromTo(
   {
     scale: 1,
   }
-);
+); */
 
 tsAnimation.to(
   ".ts-body",
@@ -98,22 +126,35 @@ tsAnimation.to(".ts-hero__section-1", { display: "none", duration: 0 });
 
 // =================== section 2 ==========================
 
-tsAnimation.add(function () {
-  document.getElementById("ts-section-img-1").src = "./images/logo_set-01.svg";
-  document.getElementById("ts-section-img-2").src = "./images/logo_set-03.svg";
-  document.getElementById("ts-section-img-3").src = "./images/logo_set-05.svg";
-  document.getElementById("ts-section-img-4").src = "./images/logo_set-07.svg";
-});
+tsAnimation.fromTo(
+  ".cityskylines",
+  1,
+  {
+    x: 0,
+  },
+  {
+    x: 100,
+  }
+);
+tsAnimation.from(
+  ".wheel",
+  {
+    rotation: "0",
+    duration: 2,
+    ease: "none",
+  },
+  "-=1"
+);
 tsAnimation.from(".ts-hero__section-2-text", {
   y: -100,
   opacity: 0,
   duration: 1.5,
 });
 
-tsAnimation.from(".ts-car", {
+/* tsAnimation.from(".ts-car", {
   x: 100,
   duration: 0.5,
-});
+}); */
 
 tsAnimation.to(
   ".ts-body",
@@ -128,19 +169,32 @@ tsAnimation.to(".ts-hero__section-2", { opacity: 0 });
 tsAnimation.to(".ts-hero__section-2", { display: "none", duration: 0 });
 
 // =================== section 3 ==========================
-tsAnimation.add(function () {
-  document.getElementById("ts-section-img-1").src = "./images/logo_set-w02.svg";
-  document.getElementById("ts-section-img-2").src = "./images/logo_set-w04.svg";
-  document.getElementById("ts-section-img-3").src = "./images/logo_set-w06.svg";
-  document.getElementById("ts-section-img-4").src = "./images/logo_set-w08.svg";
-});
 
-tsAnimation.from(".ts-hero__section-3-text", {
-  y: -100,
-  opacity: 0,
-  duration: 1.5,
-});
 tsAnimation.fromTo(
+  ".cityskylines",
+  1,
+  {
+    x: 0,
+  },
+  {
+    x: 100,
+  }
+);
+tsAnimation.from(".wheel", {
+  rotation: "360",
+  duration: 2,
+  ease: "none",
+});
+tsAnimation.from(
+  ".ts-hero__section-3-text",
+  {
+    y: -100,
+    opacity: 0,
+    duration: 1.5,
+  },
+  "-=1"
+);
+/* tsAnimation.fromTo(
   ".ts-car",
   {
     x: 100,
@@ -150,7 +204,7 @@ tsAnimation.fromTo(
   {
     rotation: 5,
   }
-);
+); */
 
 tsAnimation.to(
   ".ts-body",
@@ -166,13 +220,31 @@ tsAnimation.to(".ts-hero__section-3", { display: "none", duration: 0 });
 
 // =================== section 4 ==========================
 
-tsAnimation.add(function () {});
+tsAnimation.fromTo(
+  ".cityskylines",
+  1,
+  {
+    x: 0,
+  },
+  {
+    x: 100,
+  }
+);
+tsAnimation.from(
+  ".wheel",
+  {
+    rotation: "0",
+    duration: 2,
+    ease: "none",
+  },
+  "-=1"
+);
 tsAnimation.from(".ts-hero__section-4-text", {
   y: -100,
   opacity: 0,
   duration: 1.5,
 });
-tsAnimation.fromTo(
+/* tsAnimation.fromTo(
   ".ts-car",
   {
     x: -100,
@@ -182,7 +254,7 @@ tsAnimation.fromTo(
   {
     rotation: 0,
   }
-);
+); */
 
 tsAnimation.to(
   ".ts-body",
@@ -198,17 +270,35 @@ tsAnimation.to(".ts-hero__section-4", { display: "none", duration: 0 });
 
 // =================== section 5 ==========================
 
-tsAnimation.add(function () {});
+tsAnimation.fromTo(
+  ".cityskylines",
+  1,
+  {
+    x: 0,
+  },
+  {
+    x: 100,
+  }
+);
+tsAnimation.from(
+  ".wheel",
+  {
+    rotation: "360",
+    duration: 2,
+    ease: "none",
+  },
+  "-=1"
+);
 tsAnimation.from(".ts-hero__section-5-text", {
   y: -100,
 
   opacity: 0,
   duration: 1.5,
 });
-tsAnimation.from(".ts-car", {
+/* tsAnimation.from(".ts-car", {
   x: 300,
   duration: 1,
-});
+}); */
 tsAnimation.to(
   ".ts-body",
   {
