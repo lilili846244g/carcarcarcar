@@ -99,11 +99,10 @@ tsAnimation.to(".ts-hero__section-1", { display: "none", duration: 0 });
 // =================== section 2 ==========================
 
 tsAnimation.add(function () {
-  document.getElementById("ts-section-img-1").src = "./images/car.png";
-  document.getElementById("ts-section-img-2").src = "./images/car.png";
-  document.getElementById("ts-section-img-3").src = "./images/car.png";
-  document.getElementById("ts-section-img-4").src = "./images/car.png";
-  document.getElementById("ts-section-img-5").src = "./images/car.png";
+  document.getElementById("ts-section-img-1").src = "./images/logo_set-01.svg";
+  document.getElementById("ts-section-img-2").src = "./images/logo_set-03.svg";
+  document.getElementById("ts-section-img-3").src = "./images/logo_set-05.svg";
+  document.getElementById("ts-section-img-4").src = "./images/logo_set-07.svg";
 });
 tsAnimation.from(".ts-hero__section-2-text", {
   y: -100,
@@ -130,11 +129,10 @@ tsAnimation.to(".ts-hero__section-2", { display: "none", duration: 0 });
 
 // =================== section 3 ==========================
 tsAnimation.add(function () {
-  document.getElementById("ts-section-img-1").src = "./images/logo-1.png";
-  document.getElementById("ts-section-img-2").src = "./images/logo-1.png";
-  document.getElementById("ts-section-img-3").src = "./images/logo-1.png";
-  document.getElementById("ts-section-img-4").src = "./images/logo-1.png";
-  document.getElementById("ts-section-img-5").src = "./images/logo-1.png";
+  document.getElementById("ts-section-img-1").src = "./images/logo_set-w02.svg";
+  document.getElementById("ts-section-img-2").src = "./images/logo_set-w04.svg";
+  document.getElementById("ts-section-img-3").src = "./images/logo_set-w06.svg";
+  document.getElementById("ts-section-img-4").src = "./images/logo_set-w08.svg";
 });
 
 tsAnimation.from(".ts-hero__section-3-text", {

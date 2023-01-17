@@ -46,12 +46,12 @@ body {
     top: 0;
     left: 0;
     .cittyskylines {
-        width: 100%;
-        height: 100vh;
+        width: 200%;
+        min-height: 100%;
         position: relative;
         z-index: -1;
         overflow: hidden;
-        opacity: 0.5;
+        opacity: 0.2;
         &::before {
             content: "";
             position: fixed;
@@ -64,17 +64,17 @@ body {
             background: linear-gradient( 247deg, rgba(236, 238, 232, 0) 86%, rgba(206, 214, 214, 0.5788690476190477) 94%);
         }
         .skyline-1 {
-            width: 120%;
+            width: 100%;
             position: fixed;
             top: 30%;
             left: 0%;
             animation: svgMove 4999ms linear infinite;
             @keyframes svgMove {
                 0% {
-                    transform: translateX(0vw);
+                    transform: translateX(0);
                 }
                 100% {
-                    transform: translateX(-10vw);
+                    transform: translateX(-8vw);
                 }
             }
             img {
@@ -82,7 +82,7 @@ body {
             }
         }
         .skyline-2 {
-            width: 120%;
+            width: 100%;
             position: fixed;
             top: 30%;
             left: 0%;
@@ -90,7 +90,7 @@ body {
             animation-delay: 3s;
             @keyframes svgMove-1 {
                 0% {
-                    transform: translateX(0vw);
+                    transform: translateX(0);
                 }
                 100% {
                     transform: translateX(-8vw);
